@@ -5,7 +5,8 @@ from tensorflow.keras.models import load_model
 from streamlit_drawable_canvas import st_canvas
 
 # Load trained model
-MODEL = load_model("mnist_model.h5")
+MODEL = load_model("mnist_model.keras", compile=False)
+
 
 # Labels
 LABEL = {
@@ -69,4 +70,5 @@ if st.button("Predict"):
         st.bar_chart(pred[0])
     else:
         st.warning("Please draw a digit before predicting!")
+
 
